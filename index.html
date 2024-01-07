@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+    <script src="https://kit.fontawesome.com/03658ce228.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                
+                <ul id="sidemenu">
+                    <li><a href="#header">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#project">PROJECT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                
+                <h1>Hello! <br> I'm <span>Himanshi <br> Wadhwani</span></h1>
+            </div>
+        </div>
+    </div>
+    <!----------about----------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Moment Makers (35).JPG" class="about-image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>A second-year undergraduate in B.Tech Computer Science Engineering (specialization in Cloud 
+                        Computing and Automation). Well-versed in numerous programing languages including Java, Python, 
+                        HTML and CSS with a considerable amount of knowledge in Data Structures and Algorithms 
+                        (DSA).</p>
+
+                        <div class="tab-skills">
+                            <p class="tab-links active-links" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Java </span> <br>(Proficient Level)</li>
+                                <li><span>Python</span> <br>(Beginner Level)</li>
+                                <li><span>HTML and CSS</span> <br>(Proficient level)</li>
+                                <li><span>DSA</span> <br>(Intermediate level)</li>
+                                <li><span>OOPS</span> <br>(Beginner level)</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Competitive programming: </span> <br>Solved around 250 problems (including Arrays,<br> 
+                                    LinkedList, Stack, Queue, tree and graph) and <br>participated in more than 50 contests on various
+                                    <br> coding platforms.</li>
+                                <li><span>1382 @Codechef: </span> <br>maximum rating </li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>VIT Bhopal University </span> <br>Bhopal, Madhya Pradesh<br>CGPA: 8.57<br>
+                                    Graduating Year: 2026</li>
+                                <li><span>Intermediate (ISC Class 12th)</span> <br>St. Paul’s Church College <br>Agra, Uttar Pradesh 
+                                    <br>July, 2022</li>
+                                <li><span>High School (ICSE Class 10th)</span><br>St. Paul’s Church College <br>Agra, Uttar Pradesh 
+                                    <br>July, 2020</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------------project------------>
+    <div id="project">
+        <div class="container">
+            <h1 class="sub-title">Project</h1>
+            <div class="sectionworklist">
+                <div class="foodiollawork"></div>
+                <div class="foodiollawork">
+                    <img src="WhatsApp Image 2023-10-03 at 4.54.49 PM (2).jpeg" class="logo">
+                    <div class="layer">
+                        <h2>Foodiolla</h2>
+                        <p>A website comparing Food Prices from different Local Restaurants of Bhopal</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                
+                <div class="foodiollawork"></div>
+            </div>
+        </div>
+    </div>
+    <!--------------contact--------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-regular fa-envelope"></i> himanshiwadhwani2022@vitbhopal.ac.in</p>
+                    <p><i class="fa-solid fa-phone"></i> 7701899767</p>
+                    <div class="social-icons">
+                        <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form action="" name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="your name" required>
+                        <input type="text" name="Email" placeholder="your email" required>
+                        <textarea name="Message" rows="6" placeholder="your message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>copyright&copy;. Made with <i class="fa-solid fa-heart"></i> by Himanshi</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname)
+        {
+            for(tablink of tablinks)
+            {
+                tablink.classList.remove("active-links");
+            }
+            for(tabcontent of tabcontents)
+            {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-links");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        var sidemenu=document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.left="0";
+        }
+        function closemenu(){
+            sidemenu.style.left="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = '<https://script.google.com/macros/s/AKfycbwZB1S15aX4fcnayRvxcFX1m0WiQT67CiJxxyiZM_qq1UG_58w1G7ncLB-OLTJEZLQR/exec>'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
